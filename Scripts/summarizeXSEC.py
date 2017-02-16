@@ -97,6 +97,11 @@ for fit in fits:
             elif args.units=="uB":
                 thisXsec=float(fit[xsecInd])
                 thisXsecErr=float(fit[xsecErrInd])
+            #####################################
+            #XY CORRELATIONS CORRECTION PER HAND#
+            #thisXsec = 1.003 * thisXsec    #2016#
+            thisXsec = 1.011 * thisXsec    #2015#
+            #####################################
             xsecs[0].append(thisXsec)
             xsecs[1].append(thisXsecErr)
             xsecs[2].append(1./(xsecs[1][-1]*xsecs[1][-1]))

@@ -84,7 +84,7 @@ class LengthScale_Corr(CorrectionManager.CorrectionProvider):
                     correction = self.LS_ScaleX
                 elif 'Y' in entry.scanName:
                     correction = self.LS_ScaleY
-
+            print entry.scanName, correction
             coord = entry.displacement
             coord_corr = [a*correction for a in coord]
             entry.displacement = coord_corr

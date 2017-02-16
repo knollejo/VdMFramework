@@ -51,6 +51,8 @@ def doMakeLengthScaleFile(ConfigInfo):
         csvtable.append([entry])
         csvtable.append([table[entry]])
 
+    print table
+
     return table, csvtable
 
 

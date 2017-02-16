@@ -1,14 +1,14 @@
 {
 "Fill": "4954",
 "Date": "May272016",
-"Luminometer": "PCC",
+"Luminometer": "VTX",
 "AnalysisDir": "Fill4954_May272016",
 "CorrLater" : ["LengthScale", "Ghosts", "Satellites"],
 "Corr" : ["LengthScale"],
 "Corr" : ["LengthScale","BeamBeam"],
 "Corr" : ["BeamBeam"],
-"Corr" : ["noCorr"],
 "Corr" : ["BeamBeam","LengthScale"],
+"Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
@@ -16,13 +16,13 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond", 
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
-"makeBeamBeamFile": true,
+"makeBeamBeamFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGhostsFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs", 
-"makeLengthScaleFile": true,
+"makeLengthScaleFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -50,16 +50,16 @@
 	},
 "makeRateFileConfig":
 	{	
-	"InputPCCFiles": ["/eos/cms/store/group/comm_luminosity/PCC/VdM/May272016_274100_PromptReco_vdmminitrees.root"],
+	"InputPCCFiles": ["/eos/cms/store/group/comm_luminosity/PCC/VdM/May272016_274100_vdmminitrees.root"],
   "Comment": "BCIDs on which trigger read out PCC values",
   "PCC_BCID": [41,281,872,1783,2063],
-  "AnalysisDir": "../Fill4954_May272016",
+  "AnalysisDir": "../Fill4954_May142016",
   "Comment": "The following directories are relative to <AnalysisDir>",
   "InputScanFile" : "cond/Scan_4954.pkl",
   "PCCTreeName": "pccminitree",
-	"DataType": "PCC",
+	"DataType": "VTX",
   "OutputSubDir" : "LuminometerData",
-  "addScanInfo": true
+  "addScanInfo": false
 	},
 "makeBeamCurrentFileConfig":
 	{
@@ -76,10 +76,9 @@
 	"Comment": "Input beam currents file is <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4954.pkl",
 	"Comment": "Input CapSigmas in <AnalysisDir>/<Luminometer>/results",
-	"InputCapSigmaFile" : "LengthScale/DGConst_FitResults.pkl",
-	"InputCapSigmaFile" : "LengthScale/SimCapSigma_PCCAndVtx_FitResults.pkl",
-	"InputCapSigmaFile" : "noCorr/SimCapSigma_PCCAndVtx_FitResults.pkl",
 	"InputCapSigmaFile" : "noCorr/DGConst_FitResults.pkl",
+	"InputCapSigmaFile" : "LengthScale/DG_FitResults.pkl",
+	"InputCapSigmaFile" : "noCorr/DG_FitResults.pkl",
 	"Scanpairs" : [[1,2],[4,3],[5,6],[7,8],[9,10]],
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr"
@@ -105,7 +104,9 @@
 	"Comment" : "Where to find the correction factors in json format",
 	"InputDataDir" : "dataPrep_corr/corrData",
 	"Comment": "This is relative to <AnalysisDir>",
-	"OutputSubDir": "corr"
+	"OutputSubDir": "corr",
+        "Comment": "Which per-beam corrections to apply to which scans",
+        "SingleBeamScans": [["I1X", 2], ["I1Y", 2], ["I2X", 1], ["I2Y", 1]]
 	},
 "makeGraphsFileConfig":
 	{
@@ -114,10 +115,8 @@
 	"Comment": "Input beam currents file in <AnalysisDir>/<InputBeamCurrentFile>",
 	"InputBeamCurrentFile" : "cond/BeamCurrents_4954.pkl",
 	"Comment": "Input luminometer data in <AnalysisDir>/<InputLuminometerData>",
-	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_PromptReco_NoVeto.pkl",
-	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_NoVeto.pkl",
-	"InputLuminometerData" : "LuminometerData/Rates_PCC_4954_25Nov2016Reco_2Jan2017Veto.pkl",
-  "OutputSubDir" : "graphs"       
+	"InputLuminometerData" : "LuminometerData/Rates_VTX_4954_New.pkl",
+	"OutputSubDir" : "graphs"       
 	},
 "makeGraphs2DConfig":
 	{
@@ -132,14 +131,9 @@
 	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale_BeamBeam.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam.pkl",
-	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam_LengthScale.pkl",
-   
-   "FitName" : "SimCapSigma_PCCAndVtx",
-   "FitPartner" : "VTX",
-   "FitConfigFile" : "fits/SimCapSigma_PCCAndVtx_Config.json",
-   "FitName" : "DGConst",
-	 "FitConfigFile" : "fits/DGConst_Config_PCC.json",
-   "PlotsTempPath": [["./plotstmp/PCC/"], ["./plotstmp/VTX/"]]
+	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
+	 "FitName" : "DG",
+	 "FitConfigFile" : "fits/DG_Config.json"
 	 }
 }

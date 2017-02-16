@@ -216,7 +216,7 @@ class vdmInputData:
                         if bx not in usedCollidingBunches:
                             usedCollidingBunches.append(bx)
                 except:
-                    print "collisingBunches:  problem with",j
+                    print self.scanNumber, "collisingBunches:  problem with",j
         self.usedCollidingBunches = usedCollidingBunches
 
 # this is the natural order for analysis
@@ -231,7 +231,7 @@ class vdmInputData:
                     valueErr = self.lumiErrPerSP[j][str(bx)]
                     self.lumiErr[i].append(valueErr)
                 except:
-                    print "lumi values:  problem with",j
+                    print self.scanNumber, "lumi values:  problem with",j
                     self.lumi[i].append(-999)
                     self.lumiErr[i].append(-999)
             self.lumiPerBX[bx] = self.lumi[i]
@@ -244,7 +244,7 @@ class vdmInputData:
                 self.sumLumi[j] = self.lumiPerSP[j]['sum'] 
                 self.sumLumiErr[j] = self.lumiErrPerSP[j]['sum'] 
             except:
-                print "lumi values 2:  problem with",j
+                print self.scanNumber, "lumi values 2:  problem with",j
                 self.sumLumi[j] = -999
                 self.sumLumiErr[j] = -999
         return

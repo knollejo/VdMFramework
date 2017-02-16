@@ -4,9 +4,9 @@
 "Luminometer": "PCC",
 "AnalysisDir": "Fill4266_Aug252015",
 "CorrLater" : ["noCorr", "LengthScale", "Ghosts", "Satellites", "BeamBeam"],
+"Corr" : ["noCorr"],
 "Corr" : ["BeamBeam"],
 "Corr" : ["BeamBeam","LengthScale"],
-"Corr" : ["noCorr"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond",
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
@@ -14,13 +14,13 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond",
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
-"makeBeamBeamFile": false,
+"makeBeamBeamFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGhostsFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs",
-"makeLengthScaleFile": false,
+"makeLengthScaleFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -95,7 +95,9 @@
   "Comment" : "Where to find the correction factors in json format",
   "InputDataDir" : "dataPrep_corr/corrData",
   "Comment": "This is relative to <AnalysisDir>",
-  "OutputSubDir": "corr"
+  "OutputSubDir": "corr",
+  "Comment": "Which per-beam corrections to apply to which scans",
+  "SingleBeamScans": [["X3", 1], ["Y3", 1], ["X4", 2], ["Y4", 2]]
   },
 "makeGraphsFileConfig":
   {
@@ -119,9 +121,9 @@
 "vdmFitterConfig":
   {
   "Comment": "Input graphs file in <AnalysisDir>/<Luminometer>/graphs",
+  "InputGraphsFile" : "graphs/graphs_4266_noCorr.pkl",
   "InputGraphsFile" : "graphs/graphs_4266_BeamBeam.pkl",
   "InputGraphsFile" : "graphs/graphs_4266_BeamBeam_LengthScale.pkl",
-  "InputGraphsFile" : "graphs/graphs_4266_noCorr.pkl",
   "FitName" : "DGConst",
   "FitConfigFile" : "fits/DGConst_Config_PCC.json"
   }

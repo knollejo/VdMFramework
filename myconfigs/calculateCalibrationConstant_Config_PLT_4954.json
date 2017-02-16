@@ -1,16 +1,16 @@
+
 {
-"Fill" : "4266",
-"AnalysisDir" : "Fill4266_Aug252015",
-"Luminometer": "BCM1F",
+"Fill" : "4954",
+"AnalysisDir" : "Fill4954_May272016",
+"Luminometer": "PLT",
 "Corr" : ["noCorr"],
-"Corr" : ["LengthScale"],
 "Corr" : ["BeamBeam","LengthScale"],
 "Comment": "Input fit results file in <AnalysisDir>/<Luminometer>/results/<Corr>", 
 "FitName" : "DGConst",
 "InputFitResultsFile" : "DGConst_FitResults.pkl",
 "LuminometerSettings":
 	{
-	"LuminometerName": "BCM1F",
+	"LuminometerName": "PLT",
 	"Comment": "defaults to settings in luminometer.py", 
 	"Comment": "needs to be set for non-default settings or for new luminometer",
 	"LuminometerDescription": "default",
