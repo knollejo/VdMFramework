@@ -2,11 +2,6 @@
 "Comment" : "LengthScale correction factors for Xcoord and Ycoord",
 "LS_ScaleX" : "0.9893",
 "LS_ScaleY" : "0.9946",
-"Comment": "Per-beam LengthScale correction factors for Xcoord and Ycoord of beam 1 and beam 2",
-"LS_ScaleX1": "0.9919",
-"LS_ScaleY1": "0.9897",
-"LS_ScaleX2": "0.9867",
-"LS_ScaleY2": "0.9995",
 "Comment": "Below: per-beam LS correction factors one statistical sigma larger",
 "LS_ScaleX1": "0.9928",
 "LS_ScaleY1": "0.9905",
@@ -16,5 +11,10 @@
 "LS_ScaleX1": "0.9910",
 "LS_ScaleY1": "0.9889",
 "LS_ScaleX2": "0.9858",
-"LS_ScaleY2": "0.9987"
+"LS_ScaleY2": "0.9987",
+"Comment": "Per-beam LengthScale correction factors for Xcoord and Ycoord of beam 1 and beam 2",
+"LS_ScaleX1": "0.9919",
+"LS_ScaleY1": "0.9897",
+"LS_ScaleX2": "0.9867",
+"LS_ScaleY2": "0.9995",
 }

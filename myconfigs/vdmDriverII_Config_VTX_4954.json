@@ -7,8 +7,8 @@
 "Corr" : ["LengthScale"],
 "Corr" : ["LengthScale","BeamBeam"],
 "Corr" : ["BeamBeam"],
-"Corr" : ["BeamBeam","LengthScale"],
 "Corr" : ["noCorr"],
+"Corr" : ["BeamBeam","LengthScale"],
 "Comment": "Output of following step goes to <AnalysisDir>/cond",
 "makeScanFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/LuminometerData",
@@ -16,13 +16,13 @@
 "Comment": "Output of following step goes to <AnalysisDir>/cond",
 "makeBeamCurrentFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
-"makeBeamBeamFile": false,
+"makeBeamBeamFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGhostsFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeSatellitesFile": false,
 "Comment": "Output of following step goes to <AnalysisDir>/<Luminometer>/graphs",
-"makeLengthScaleFile": false,
+"makeLengthScaleFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
 "makeGraphsFile": true,
 "Comment": "Output of following step goes to <AnalysisDir>/corr",
@@ -105,8 +105,8 @@
 	"InputDataDir" : "dataPrep_corr/corrData",
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr",
-        "Comment": "Which per-beam corrections to apply to which scans",
-        "SingleBeamScans": [["I1X", 2], ["I1Y", 2], ["I2X", 1], ["I2Y", 1]]
+    "Comment": "Which per-beam corrections to apply to which scans",
+    "SingleBeamScans": [["I1X", 2], ["I1Y", 2], ["I2X", 1], ["I2Y", 1]]
 	},
 "makeGraphsFileConfig":
 	{
@@ -131,8 +131,8 @@
 	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_LengthScale_BeamBeam.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam.pkl",
-	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam_LengthScale.pkl",
 	 "InputGraphsFile" : "graphs/graphs_4954_noCorr.pkl",
+	 "InputGraphsFile" : "graphs/graphs_4954_BeamBeam_LengthScale.pkl",
 	 "FitName" : "DG",
 	 "FitConfigFile" : "fits/DG_Config.json"
 	 }

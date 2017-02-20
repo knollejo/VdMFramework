@@ -106,8 +106,8 @@
 	"InputDataDir" : "dataPrep_corr/corrData",
 	"Comment": "This is relative to <AnalysisDir>",
 	"OutputSubDir": "corr",
-        "Comment": "Which per-beam corrections to apply to which scans",
-        "SingleBeamScans": [["I1X", 2], ["I1Y", 2], ["I2X", 1], ["I2Y", 1]]
+    "Comment": "Which per-beam corrections to apply to which scans",
+    "SingleBeamScans": [["I1X", 2], ["I1Y", 2], ["I2X", 1], ["I2Y", 1]]
 	},
 "makeGraphsFileConfig":
 	{
